@@ -87,9 +87,17 @@ static unsigned int defaultunderline = 7;
 /* Internal mouse shortcuts. */
 /* Beware that overloading Button1 will disable the selection. */
 static Mousekey mshortcuts[] = {
-	/* keysym		mask		string */
-	{ Button4,		XK_ANY_MOD,	"\031"},
-	{ Button5,		XK_ANY_MOD,	"\005"},
+	/* keysym           mask            string */
+	{ Button4,          ShiftMask,      "\033[1;2A"},
+	{ Button4,          ControlMask,    "\033[1;5A"},
+	{ Button4,          Mod1Mask,       "\033[1;3A"},
+	{ Button4,          XK_ANY_MOD,     "\033[A"},
+	{ Button4,          XK_ANY_MOD,     "\033OA"},
+	{ Button5,          ShiftMask,      "\033[1;2B"},
+	{ Button5,          ControlMask,    "\033[1;5B"},
+	{ Button5,          Mod1Mask,       "\033[1;3B"},
+	{ Button5,          XK_ANY_MOD,     "\033[B"},
+	{ Button5,          XK_ANY_MOD,     "\033OB"},
 };
 
 /* Internal keyboard shortcuts. */
